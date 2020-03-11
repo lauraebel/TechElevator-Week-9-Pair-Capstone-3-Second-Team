@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.npgeek.dao.ParkDao;
 import com.techelevator.npgeek.model.Park;
@@ -31,7 +32,10 @@ public class NPController {
 	}
 	
 	@RequestMapping(path="/parkDetails", method = RequestMethod.GET)
-	public String displayParkDetails() {
+	public String displayParkDetails(ModelMap map, @RequestParam String parkCode) {
+		
+		Park park = parkDao.getParkByCode(parkCode);
+		map.addAttribute("park",park);
 	
 		return "parkDetails";
 	}

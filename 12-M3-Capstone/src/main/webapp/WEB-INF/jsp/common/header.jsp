@@ -24,7 +24,6 @@
 		<ul>
 
 			<li><a href="<c:url value="/"/>">Homepage</a></li>
-			<li><a href="<c:url value="/parkDetails"/>">Park Details</a></li>
 			<li><a href="<c:url value="/survey"/>">Survey</a></li>
 			<li><a href="<c:url value="/favoriteParks"/>">Favorite Parks</a></li>
 
@@ -33,3 +32,6 @@
 	</nav>
 </body>
 
+
+
+<c:import url="/WEB-INF/jsp/common/footer.jsp" />
