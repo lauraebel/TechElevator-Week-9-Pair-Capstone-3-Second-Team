@@ -6,7 +6,7 @@
 
 	<h1>What'd you think?</h1>
 
-	<form <c:url value="/favoriteParks"/>" method="GET">
+	<form <c:url value="/survey"/>" method="POST">
 
 		<div class="formLine">
 			<label for="favoritePark">Favorite Park</label> <select
