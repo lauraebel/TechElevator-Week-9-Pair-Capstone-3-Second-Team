@@ -91,8 +91,6 @@ public class JDBCParkDao implements ParkDao {
 		park.setInspoQuoteSrc(results.getString("inspirationalquotesource"));
 		park.setDescription(results.getString("parkdescription"));
 		
-		park.setMilesOfTrail(results.getDouble("milesoftrail"));
-		
 		park.setAcres(results.getLong("acreage"));
 		park.setAnnualVisitorCount(results.getLong("annualvisitorcount"));
 		
@@ -101,6 +99,7 @@ public class JDBCParkDao implements ParkDao {
 		park.setYearFounded(results.getInt("yearfounded"));
 		park.setEntryFee(results.getInt("entryfee"));
 		park.setAnimalSpeciesCount(results.getInt("numberofanimalspecies"));
+		park.setMilesOfTrail((int)results.getDouble("milesoftrail"));
 		
 		return park;
 	}

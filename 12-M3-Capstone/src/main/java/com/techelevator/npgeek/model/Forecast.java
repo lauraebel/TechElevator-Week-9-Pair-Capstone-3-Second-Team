@@ -2,15 +2,14 @@ package com.techelevator.npgeek.model;
 
 public class Forecast {
 
-	private String forecast;
+	private String weatherType;
 	private String imgPath;
 	
 	private int high;
 	private int low;
-	private int forecastDay;
 	
-	public String getForecast() {
-		return forecast;
+	public String getWeatherType() {
+		return weatherType;
 	}
 	
 	public String getImgPath() {
@@ -25,12 +24,8 @@ public class Forecast {
 		return low;
 	}
 	
-	public int getForecastDay() {
-		return forecastDay;
-	}
-	
-	public void setForecast(String forecast) {
-		this.forecast = forecast;
+	public void setWeatherType(String weatherType) {
+		this.weatherType = weatherType;
 	}
 	
 	public void setImgPath(String imgPath) {
@@ -43,9 +38,5 @@ public class Forecast {
 	
 	public void setLow(int low) {
 		this.low = low;
-	}
-	
-	public void setForecastDay(int forecastDay) {
-		this.forecastDay = forecastDay;
 	}
 }
