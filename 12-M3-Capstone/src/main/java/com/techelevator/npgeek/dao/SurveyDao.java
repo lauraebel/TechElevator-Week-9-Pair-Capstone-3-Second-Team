@@ -2,11 +2,12 @@ package com.techelevator.npgeek.dao;
 
 import java.util.Map;
 
+import com.techelevator.npgeek.model.Park;
 import com.techelevator.npgeek.model.Survey;
 
 public interface SurveyDao {
 
-	void submitSurvey(Survey survey);
+	Long submitSurvey(Survey survey);
+	Map<Park, Integer> getFavoriteParks();
 	
-	Map<String, Integer> getFavoriteParks();
 }

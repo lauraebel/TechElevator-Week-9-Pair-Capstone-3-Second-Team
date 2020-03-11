@@ -10,8 +10,6 @@ public class Park {
 	private String inspoQuoteSrc;
 	private String description;
 	
-	private double milesOfTrail;
-	
 	private Long acres;
 	private Long annualVisitorCount;
 	
@@ -20,6 +18,7 @@ public class Park {
 	private int yearFounded;
 	private int entryFee;
 	private int animalSpeciesCount;
+	private int milesOfTrail;
 	
 	public String getCode() {
 		return code;
@@ -47,10 +46,6 @@ public class Park {
 	
 	public String getDescription() {
 		return description;
-	}
-	
-	public double getMilesOfTrail() {
-		return milesOfTrail;
 	}
 	
 	public Long getAcres() {
@@ -81,6 +76,10 @@ public class Park {
 		return animalSpeciesCount;
 	}
 	
+	public int getMilesOfTrail() {
+		return milesOfTrail;
+	}
+	
 	public void setCode(String code) {
 		this.code = code;
 	}
@@ -109,10 +108,6 @@ public class Park {
 		this.description = description;
 	}
 	
-	public void setMilesOfTrail(double milesOfTrail) {
-		this.milesOfTrail = milesOfTrail;
-	}
-	
 	public void setAcres(Long acres) {
 		this.acres = acres;
 	}
@@ -139,6 +134,10 @@ public class Park {
 	
 	public void setAnimalSpeciesCount(int animalSpeciesCount) {
 		this.animalSpeciesCount = animalSpeciesCount;
+	}
+	
+	public void setMilesOfTrail(int milesOfTrail) {
+		this.milesOfTrail = milesOfTrail;
 	}
 
 	@Override
