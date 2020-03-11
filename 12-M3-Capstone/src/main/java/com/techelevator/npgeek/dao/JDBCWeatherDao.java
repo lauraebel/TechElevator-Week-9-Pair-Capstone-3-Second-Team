@@ -25,16 +25,15 @@ public class JDBCWeatherDao implements WeatherDao {
 		
 		List<Forecast> forecasts = new ArrayList<Forecast>();
 		
-		String sql = "";
+		String sql = "SELECT low, high, forecast FROM weather WHERE parkcode = ? ORDER BY fivedayforecastvalue";
 		
-		SqlRowSet results = jdbc.queryForRowSet(sql);
+		SqlRowSet results = jdbc.queryForRowSet(sql, parkCode);
 		
 		while (results.next()) {
 			Forecast forecast = mapForecastFromResults(results);
 			
 			forecasts.add(forecast);
 		}
-		
 		
 		return forecasts;
 	}
@@ -43,9 +42,9 @@ public class JDBCWeatherDao implements WeatherDao {
 	private Forecast mapForecastFromResults(SqlRowSet results) {
 		Forecast forecast = new Forecast();
 		
-		forecast.setWeatherType(results.getString(columnLabel));
-		forecast.setHigh(results.getInt(columnLabel));
-		forecast.setLow(results.getInt(columnLabel));
+		forecast.setWeatherType(results.getString("forecast"));
+		forecast.setHigh(results.getInt("high"));
+		forecast.setLow(results.getInt("low"));
 		
 		forecast.setImgPath(getWeatherImage(forecast.getWeatherType()));
 		
@@ -54,10 +53,11 @@ public class JDBCWeatherDao implements WeatherDao {
 	
 	private String getWeatherImage(String weatherType) {
 		
-		SqlRowSet results = "";
+		String sql = "SELECT imgpath FROM weather_img WHERE name = ?";
 		
+		SqlRowSet results = jdbc.queryForRowSet(sql, weatherType.toLowerCase());
+		results.next();
 		
-		
-		return null;
+		return results.getString("imgpath");
 	}
 }

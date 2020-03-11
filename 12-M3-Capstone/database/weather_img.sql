@@ -49,3 +49,10 @@ SELECT * FROM survey_result;
 TRUNCATE survey_result CASCADE;
 
 SELECT COUNT(survey_result.parkcode) AS surveycount, park.* FROM park JOIN survey_result ON park.parkcode = survey_result.parkcode GROUP BY park.parkcode ORDER BY surveycount DESC, park.parkname;
+
+
+SELECT low, high, forecast FROM weather WHERE parkcode = ? ORDER BY fivedayforecastvalue;
+
+SELECT parkcode FROM weather GROUP BY forecast, parkcode;
+
+SELECT imgpath FROM weather_img WHERE name = 'snow';
