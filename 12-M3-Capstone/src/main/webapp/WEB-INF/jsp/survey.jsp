@@ -6,7 +6,7 @@
 
 	<h1>What'd you think?</h1>
 
-	<form <c:url value="/survey"/>" method="POST">
+	<form action="<c:url value="/survey"/>" method="POST">
 
 		<div class="formLine">
 			<label for="favoritePark">Favorite Park</label> <select
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="formLine">
-			<label for="residentState">State of Residencey</label> <select
+			<label for="residentState">State of Residency</label> <select
 				name="state">
 				<c:forEach items="${states}" var="state">
 					<option value="${state}">${state}</option>
