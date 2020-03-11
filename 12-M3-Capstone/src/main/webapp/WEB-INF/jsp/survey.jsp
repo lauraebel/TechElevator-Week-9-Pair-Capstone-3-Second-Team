@@ -10,31 +10,34 @@
 
 		<div class="formLine">
 			<label for="favoritePark">Favorite Park</label> <select
-				name="selectedPlanet">
-				<option value="linkin">Linkin Park</option>
+				name="favoriteParkCode">
+				<c:forEach items="${parks}" var="park">
+					<option value="${park.code}">${park.name}</option>
+				</c:forEach>
 			</select>
 		</div>
 
 		<div class="formLine">
 			<label for="askEmail">Email Address: </label> 
-			<input type="text" name="userEmail" required/>
+			<input type="text" name="email" required/>
 		</div>
 
 		<div class="formLine">
 			<label for="residentState">State of Residencey</label> <select
-				name="residentState">
-				<option value="Ohio">Ohio</option>
-				<option value="California">California</option>
+				name="state">
+				<c:forEach items="${states}" var="state">
+					<option value="${state}">${state}</option>
+				</c:forEach>
 			</select>
 		</div>
 
 
 		<div class="formLine">
 
-			<input type="radio" name="neat" /> <label for="neat">neat</label> 
-			<input type="radio" name="neat" /> <label for="neat">neat</label> 
-			<input type="radio" name="neat" /> <label for="neat">neat</label> 
-			<input type="radio" name="neat" /> <label for="neat">neat</label> 
+			<input type="radio" name="activityLevel" value="inactive"/> <label for="neat">Inactive</label> 
+			<input type="radio" name="activityLevel" value="sedentary"/> <label for="neat">Sedentary</label> 
+			<input type="radio" name="activityLevel" value="active"/> <label for="neat">Active</label> 
+			<input type="radio" name="activityLevel" value="extremely active"/> <label for="neat">Extremely Active</label> 
 		</div>
 		
 		<input type="submit" value="Submit" />

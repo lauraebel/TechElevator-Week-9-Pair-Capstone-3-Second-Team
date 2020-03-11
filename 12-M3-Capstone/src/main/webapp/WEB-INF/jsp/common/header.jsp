@@ -12,18 +12,17 @@
 <body>
 	<header>
 		<c:url value="/" var="homePageHref" />
-		<c:url value="#" var="logoSrc" />
+		<c:url var="logoImg" value="/img/logo.png" />
 
-		<a href="${homePageHref}"> <img src="${logoSrc}"
+		<a href="${homePageHref}"> <img src="${logoImg}"
 			alt="National Park Geek logo" />
 		</a>
-		<h1>National Park Geek</h1>
 	</header>
 	<nav>
 		<h2>Explore National Park Geek</h2>
 		<ul>
 
-			<li><a href="<c:url value="/"/>">Homepage</a></li>
+			<li><a href="<c:url value="/"/>">Home Page</a></li>
 			<li><a href="<c:url value="/survey"/>">Survey</a></li>
 			<li><a href="<c:url value="/favoriteParks"/>">Favorite Parks</a></li>
 
