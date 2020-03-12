@@ -15,13 +15,13 @@ public class ForecastTest {
 	public void calculates_high_temp_in_celsius_correctly() {
 		forecast.setFHigh(71);
 		
-		Assert.assertEquals(21 ,forecast.getCHigh());
+		Assert.assertEquals(21 ,forecast.getcHigh());
 	}
 	
 	@Test
 	public void calculates_low_temp_in_celsius_correctly() {
 		forecast.setFLow(48);
 		
-		Assert.assertEquals(8, forecast.getCLow());
+		Assert.assertEquals(8, forecast.getcLow());
 	}
 }

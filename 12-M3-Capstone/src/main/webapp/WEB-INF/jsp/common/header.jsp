@@ -1,16 +1,14 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>National Park Geek</title>
-<c:url value="/css/npgeek.css" var="cssHref" />
-<link rel="stylesheet" href="${cssHref}">
+	<meta charset="UTF-8">
+	<title>National Park Geek</title>
+	<c:url value="/css/npgeek.css" var="cssHref" />
+	<link rel="stylesheet" href="${cssHref}">
 
-<script src="javascript.js">
-</script>
-
+	<script src="javascript.js"></script>
 
 </head>
 
@@ -30,7 +28,6 @@
 			<li><a href="<c:url value="/"/>">Home Page</a></li>
 			<li><a href="<c:url value="/survey"/>">Survey</a></li>
 			<li><a href="<c:url value="/favoriteParks"/>">Favorite Parks</a></li>
-
 
 		</ul>
 	</nav>

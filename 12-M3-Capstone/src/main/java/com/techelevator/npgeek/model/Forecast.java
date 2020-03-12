@@ -8,6 +8,9 @@ public class Forecast {
 	private int fHigh;
 	private int fLow;
 	
+	private int cHigh;
+	private int cLow;
+	
 	public String getWeatherType() {
 		return weatherType;
 	}
@@ -16,23 +19,28 @@ public class Forecast {
 		return imgPath;
 	}
 	
-	public int getFHigh() {
+	public int getfHigh() {
 		return fHigh;
 	}
-	
-	public int getFLow() {
+
+	public int getfLow() {
 		return fLow;
 	}
-	
-	public int getCHigh() {
-		double cHigh = (fHigh - 32) * ((double)5/9);
-		
-		return (int) cHigh;
+
+	public void setfHigh(int fHigh) {
+		this.fHigh = fHigh;
+	}
+
+	public void setfLow(int fLow) {
+		this.fLow = fLow;
+	}
+
+	public int getcHigh() {
+		return cHigh;
 	}
 	
-	public int getCLow() {
-		double cLow = (fLow - 32) * ((double)5/9);
-		return (int) cLow;
+	public int getcLow() {
+		return cLow;
 	}
 	
 	public void setWeatherType(String weatherType) {
@@ -45,9 +53,16 @@ public class Forecast {
 	
 	public void setFHigh(int high) {
 		this.fHigh = high;
+		
+		double celHigh = (fHigh - 32) * ((double)5/9);
+		this.cHigh = (int) celHigh;
 	}
 	
 	public void setFLow(int low) {
 		this.fLow = low;
+		
+		double celLow = (fLow - 32) * ((double)5/9);
+		this.cLow = (int) celLow;
 	}
+
 }

@@ -22,15 +22,34 @@
 		</div>
 	</div>
 	<script src="<c:url value="/webcontent/collapseMenu.js" />" /></script>
-
+	
+	<c:set var="high" value="" />
+	<c:set var="low" value="" />
+	<c:set var="suffix" value="" />
+	
 	<div class="forecast">
 		<c:forEach items="${forecasts}" var="forecast">
 			<div class="dayForecast">
 				<c:url var="forecastImg" value="/img/weather/${forecast.imgPath}" />
 				<img src="${forecastImg}"
 					alt="Image of ${forecast.weatherType} Weather">
-				<p>High: ${forecast.high}</p>
-				<p>Low: ${forecast.low}</p>
+				
+				<c:choose>
+					<c:when test="${isFarenheit == true}">
+						<c:set var="high" value="${forecast.fHigh}" />
+						<c:set var="low" value="${forecast.fLow}" />
+						<c:set var="suffix" value="°F" />
+					</c:when>
+					<c:when test="${isFarenheit == false}">
+						<c:set var="high" value="${forecast.cHigh}" />
+						<c:set var="low" value="${forecast.cLow}" />
+						<c:set var="suffix" value="°C" />
+						
+					</c:when>
+				</c:choose>
+				
+				<p><c:out value="High: ${high} ${suffix}" /></p>
+				<p><c:out value="Low: ${low} ${suffix}" /></p>
 				
 				<div class="weatherAdvisory">
 					<c:if test="${forecast.weatherType == 'snow'}">
@@ -45,23 +64,20 @@
 					<c:if test="${forecast.weatherType == 'thunderstorms'}">
 						<p>Seek shelter and avoid hiking on exposed ridges!</p>
 					</c:if>
-					<c:if test="${forecast.high > 75}">
+					<c:if test="${forecast.fHigh > 75}">
 						<p>Bring an extra gallon of water!</p>
 					</c:if>
-					<c:if test="${forecast.high - forecast.low > 20}">
+					<c:if test="${forecast.fHigh - forecast.fLow > 20}">
 						<p>Wear breathable layers!</p>
 					</c:if>
-					<c:if test="${forecast.low < 20}">
+					<c:if test="${forecast.fLow < 20}">
 						<p>Warning: Will Be Exposed to Frigid Temperatures!</p>
 					</c:if>
 				</div>
 
-
-
 			</div>
 		</c:forEach>
 
-	</div>
 	</div>
 	
 	<form action="<c:url value="/details" />" method="POST">
@@ -77,14 +93,7 @@
 			
 		<input type="submit" value="Change Unit" />	
 	</form>
-	
-	<%-- <button type="submit" formaction="<c:url value="/details" />" formmethod="POST" name="FCtoggle" >
-		<c:url var="buttonUrl" value="/img/weather/temp-unit-button.png" />
-		<img src="${buttonUrl}" alt="Farenheit/Celsius button img" />
-	</button>
- --%>
 
 </section>
-
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

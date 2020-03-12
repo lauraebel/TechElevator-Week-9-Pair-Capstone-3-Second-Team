@@ -1,29 +1,26 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <section>
 
-<h1>Welcome to NPGEEK!</h1>
+	<h1>Welcome to NPGEEK!</h1>
 
 	<c:forEach items="${parks}" var="park">
-	
-	<c:url value="details" var="parkDetailsUrl">
-				<c:param name="parkCode" value="${park.code}" />
-	</c:url>
-	
-	
+		<c:url value="details" var="parkDetailsUrl">
+			<c:param name="parkCode" value="${park.code}" />
+		</c:url>
+
 		<div class="parkTile">
 			<c:url var="parkImg" value="/img/parks/${park.code.toLowerCase()}.jpg" />
-			<a class="park-image" href="${parkDetailsUrl}" ><img src="${parkImg}" alt="Image of ${park.name}">
+			<a class="park-image" href="${parkDetailsUrl}">
+				<img src="${parkImg}" alt="Image of ${park.name}">
 			</a>
 			<h3>${park.name}</h3>
-			<p>${park.description}	
-			
-			
+			<p>${park.description}
 		</div>
 	</c:forEach>
-</section>
 
+</section>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
