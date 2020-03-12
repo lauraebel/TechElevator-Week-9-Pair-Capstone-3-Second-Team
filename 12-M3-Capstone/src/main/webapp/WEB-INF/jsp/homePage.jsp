@@ -8,7 +8,7 @@
 
 	<c:forEach items="${parks}" var="park">
 	
-	<c:url value="parkDetails" var="parkDetailsUrl">
+	<c:url value="details" var="parkDetailsUrl">
 				<c:param name="parkCode" value="${park.code}" />
 	</c:url>
 	

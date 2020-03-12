@@ -43,8 +43,8 @@ public class JDBCWeatherDao implements WeatherDao {
 		Forecast forecast = new Forecast();
 		
 		forecast.setWeatherType(results.getString("forecast"));
-		forecast.setHigh(results.getInt("high"));
-		forecast.setLow(results.getInt("low"));
+		forecast.setFHigh(results.getInt("high"));
+		forecast.setFLow(results.getInt("low"));
 		
 		forecast.setImgPath(getWeatherImage(forecast.getWeatherType()));
 		

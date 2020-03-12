@@ -7,6 +7,11 @@
 <title>National Park Geek</title>
 <c:url value="/css/npgeek.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref}">
+
+<script src="javascript.js">
+</script>
+
+
 </head>
 
 <body>
@@ -30,7 +35,3 @@
 		</ul>
 	</nav>
 </body>
-
-
-
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />

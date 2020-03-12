@@ -1,7 +1,18 @@
 
+body {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"header"
+	"nav"
+	"content"
+	;
+}
+
 header {
 	margin: 5px;
 	background-color: green;
+	grid: header;
 }
 
 header h1 {
@@ -19,6 +30,7 @@ header img {
 }
 
 nav {
+	grid: nav;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	background-color: green;
@@ -77,8 +89,8 @@ li a:hover {
 }
 
 .collapsible {
-  background-color: #eee;
-  color: #444;
+  background-color: #777;
+  color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -89,13 +101,14 @@ li a:hover {
 }
 
 .active, .collapsible:hover {
-  background-color: #ccc;
+  background-color: #555;
 }
 
 .content {
   padding: 0 18px;
-  display: none;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height 0.2s ease-out;
   background-color: #f1f1f1;
 }
 
@@ -184,4 +197,69 @@ div.buttons > h3 {
 
 
 
+
+section .details {
+	grid: content;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"park"
+	"forecast"
+	;
+}
+
+section div.parkTile {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"img"
+	"title"
+	"details"
+	"info"
+	;
+
+}
+
+section .details.parkTile img{
+	grid: img;
+}
+
+section .details.parkTile h3 {
+	grid: title;
+}
+
+section .details.parkTile p{
+	grid: details;
+}
+
+section .details.forecast{
+	grid: forecast;
+	display: inline-block;
+}
+
+body > section > div.forecast {
+	display: flex;
+	align-items: baseline;
+}
+
+
+body > section > div.forecast > div.dayForecast > img {
+	width: 30%;
+	
+}
+
+body > section > div.forecast > div:nth-child(1) {
+	margin-top: 10px;
+	
+}
+
+body > section > div.forecast > div:nth-child(1) > img {
+	width: 75%;
+	
+}
+
+body > section > div.forecast > div.dayForecast > p {
+	margin: 5px 0px 5px 0px;
+	
+}
 

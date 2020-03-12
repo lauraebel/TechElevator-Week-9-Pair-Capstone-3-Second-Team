@@ -7,7 +7,7 @@
 
 	<h1>What'd you think?</h1>
 	
-	<c:url var="submitSurveyUrl" value="/submit" />
+	<c:url var="submitSurveyUrl" value="/survey" />
 	
 	<form:form action="${surveyUrl}" method="POST" modelAttribute="survey">
 		
