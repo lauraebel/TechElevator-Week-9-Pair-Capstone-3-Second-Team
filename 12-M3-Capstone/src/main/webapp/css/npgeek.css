@@ -98,3 +98,90 @@ li a:hover {
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+/* ---------------------- Survey Page ------------------------- */
+
+#survey-details {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #favoriteParkCode {	
+	height: 30px;
+	font-size: 16px;
+}
+
+#survey-details > #survey > #email {
+	font-size: 16px;
+	width: 300px;
+}
+
+#survey-details > #survey > #state {
+	height: 30px;
+	font-size: 16px;
+}
+
+#survey-details > #survey > #buttons {
+	position: absolute;	
+}
+
+input[type="radio"] + label {
+	font-size: 20px;	
+	padding-left: 15px;
+	padding-right: 40px;
+}
+
+#survey-details > #survey > #activityLevel1 {
+	font-size: 20px;
+}
+
+#survey-details > #survey > #activityLevel2 {
+	font-size: 20px;
+}
+
+#survey-details > #survey > #activityLevel3 {
+	font-size: 20px;
+}
+
+#survey-details > #survey > #activityLevel4 {
+	font-size: 20px;
+}
+
+#survey-details > #survey > #submit {
+	border: solid .2px;
+	font-size: 20px;
+	width: 150px;
+	max-height: 100px;
+	position: relative;
+	top: 100px;
+}
+
+#survey-details > #survey > h3 {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+div.buttons > h3 {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

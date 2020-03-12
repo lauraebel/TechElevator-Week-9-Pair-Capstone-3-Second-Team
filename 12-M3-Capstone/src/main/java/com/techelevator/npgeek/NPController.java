@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.techelevator.dao.model.SignUp;
 import com.techelevator.npgeek.dao.ParkDao;
 import com.techelevator.npgeek.dao.SurveyDao;
 import com.techelevator.npgeek.dao.WeatherDao;
@@ -70,17 +69,17 @@ public class NPController {
 		return "survey";
 	}
 
-	@RequestMapping(path = "/submit", method = RequestMethod.POST)
-	public String submitSurvey(@Valid @ModelAttribute("survey") Survey survey, BindingResult result) {
-		
-		if (result.hasErrors()) {
-			return "survey";
-		} else {
-			Survey survey = map.get
-		}
-
-		return "redirect:/favoriteParks";
-	}
+//	@RequestMapping(path = "/submit", method = RequestMethod.POST)
+//	public String submitSurvey(@Valid @ModelAttribute("survey") Survey survey, BindingResult result) {
+//		
+//		if (result.hasErrors()) {
+//			return "survey";
+//		} else {
+//			Survey survey = map.get
+//		}
+//
+//		return "redirect:/favoriteParks";
+//	}
 
 	@RequestMapping(path = "/favoriteParks", method = RequestMethod.GET)
 	public String displayFavoriteParks(ModelMap map) {
