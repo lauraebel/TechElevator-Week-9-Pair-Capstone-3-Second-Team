@@ -18,7 +18,7 @@
 			<a class="park-image" href="${parkDetailsUrl}" ><img src="${parkImg}" alt="Image of ${park.name}">
 			</a>
 			<h3>${park.name}</h3>
-			<p>${park.description}</p>
+			<p>${park.description}	
 			
 			
 		</div>
