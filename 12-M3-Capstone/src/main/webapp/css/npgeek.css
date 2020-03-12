@@ -120,17 +120,21 @@ li a:hover {
 
 #survey-details > #survey > #favoriteParkCode {	
 	height: 30px;
-	font-size: 16px;
+	font-size: 17px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #survey-details > #survey > #email {
-	font-size: 16px;
+	font-size: 17px;
 	width: 300px;
+	height: 30px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #survey-details > #survey > #state {
 	height: 30px;
-	font-size: 16px;
+	font-size: 17px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #survey-details > #survey > #buttons {
@@ -138,34 +142,22 @@ li a:hover {
 }
 
 input[type="radio"] + label {
-	font-size: 20px;	
+	font-size: 18px;	
 	padding-left: 15px;
 	padding-right: 40px;
-}
-
-#survey-details > #survey > #activityLevel1 {
-	font-size: 20px;
-}
-
-#survey-details > #survey > #activityLevel2 {
-	font-size: 20px;
-}
-
-#survey-details > #survey > #activityLevel3 {
-	font-size: 20px;
-}
-
-#survey-details > #survey > #activityLevel4 {
-	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #survey-details > #survey > #submit {
-	border: solid .2px;
+	border-radius: 10px;
+	border: solid 1px;
 	font-size: 20px;
-	width: 150px;
+	width: 200px;
 	max-height: 100px;
 	position: relative;
-	top: 100px;
+	top: 60px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 5px;
 }
 
 #survey-details > #survey > h3 {
@@ -180,8 +172,12 @@ div.buttons > h3 {
 	margin-bottom: 5px;	
 }
 
-
-
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;            
+}
 
 
 
