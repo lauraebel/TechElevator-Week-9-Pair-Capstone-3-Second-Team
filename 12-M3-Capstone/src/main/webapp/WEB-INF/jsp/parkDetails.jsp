@@ -2,6 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
+
 <section>
 
 	<h1>PARK DETAILS! WOW! ISN'T THIS PARK NEAT?</h1>
@@ -14,10 +15,12 @@
 		<div id="moreInfo">
 			<button type="button" class="collapsible">More Information</button>
 			<div class="content">
-				<p>Lorem ipsum...</p>
+				<p>Acres: ${park.acres} </p>
+				<p>Elevation: ${park.elevation} feet</p>
+				
 			</div>
 		</div>
-
+		<script src="<c:url value="/webcontent/collapseMenu.js" />"/></script>
 
 		<div class="forecast">
 			<c:forEach items="${forecasts}" var="forecast">
