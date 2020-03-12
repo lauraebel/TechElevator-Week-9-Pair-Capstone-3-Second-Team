@@ -35,7 +35,3 @@
 		</ul>
 	</nav>
 </body>
-
-
-
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />

@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
@@ -63,8 +63,26 @@
 
 	</div>
 	</div>
-
-
+	
+	<form action="<c:url value="/details" />" method="POST">
+		<c:set var="choseFarenheit" value="true" />
+		
+		<input type="radio" value="${choseFarenheit}" name="changeUnit">
+			<c:url var="farenURL" value="/img/weather/farenheit.png" />
+			<img src="${farenURL}" alt="Farenheit img" />
+		
+		<input type="radio" value="${!choseFarenheit}" name="changeUnit" />
+			<c:url var="celURL" value="/img/weather/celsius.png" />
+			<img src="${celURL}" alt="Celsius img" />
+			
+		<input type="submit" value="Change Unit" />	
+	</form>
+	
+	<%-- <button type="submit" formaction="<c:url value="/details" />" formmethod="POST" name="FCtoggle" >
+		<c:url var="buttonUrl" value="/img/weather/temp-unit-button.png" />
+		<img src="${buttonUrl}" alt="Farenheit/Celsius button img" />
+	</button>
+ --%>
 
 </section>
 
