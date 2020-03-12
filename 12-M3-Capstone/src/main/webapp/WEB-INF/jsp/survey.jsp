@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
@@ -32,55 +32,15 @@
 			</c:forEach>
 		</form:select>
 		
-		
-		
 		<h4>Your Activity Level:</h4>
 		<form:radiobutton path="activityLevel" value="inactive" label="Inactive" />
 		<form:radiobutton path="activityLevel" value="sedentary" label="Sedentary" />
 		<form:radiobutton path="activityLevel" value="active" label="Active" />
 		<form:radiobutton path="activityLevel" value="extremely active" label="Extremely Active" /> 
 		
-		
 		<input type="submit" value="Submit" />
 		
 	</form:form>
-
-	<%-- <form action="<c:url value="/survey"/>" method="POST">
-
-		<div class="formLine">
-			<label for="favoritePark">Favorite Park:</label>
-			<select name="favoriteParkCode">
-				<c:forEach items="${parks}" var="park">
-					<option value="${park.code}" label="${park.name}" />
-				</c:forEach>
-			</select>
-		</div>
-
-		<div class="formLine">
-			<label for="askEmail">Email Address:</label>
-			<input type="text" name="email" />
-		</div>
-
-		<div class="formLine">
-			<label for="residentState">State of Residency:</label>
-			<select name="state">
-				<c:forEach items="${states}" var="state">
-					<option value="${state}" label="${state}" />
-				</c:forEach>
-			</select>
-		</div>
-
-		<div class="formLine">
-			<label for="activityLevel">Activity Level:</label>
-			<input type="radio" name="activityLevel" value="inactive" />Inactive 
-			<input type="radio" name="activityLevel" value="sedentary" />Sedentary
-			<input type="radio" name="activityLevel" value="active" />Active
-			<input type="radio" name="activityLevel" value="extremely active" />Extremely Active
-		</div>
-
-		<input type="submit" value="Submit" />
-
-	</form> --%>
 
 </section>
 
