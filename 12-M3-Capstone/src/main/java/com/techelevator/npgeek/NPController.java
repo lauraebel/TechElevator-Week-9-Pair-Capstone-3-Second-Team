@@ -3,6 +3,7 @@ package com.techelevator.npgeek;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.npgeek.dao.ParkDao;
 import com.techelevator.npgeek.dao.SurveyDao;
+import com.techelevator.npgeek.dao.WeatherDao;
+import com.techelevator.npgeek.model.Forecast;
 import com.techelevator.npgeek.model.Park;
 import com.techelevator.npgeek.model.Survey;
 
@@ -25,7 +28,10 @@ public class NPController {
 	private ParkDao parkDao;
 
 	@Autowired
-	SurveyDao surveyDao;
+	private SurveyDao surveyDao;
+	
+	@Autowired
+	private WeatherDao weatherDao;
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String displayHomePage(ModelMap map) {
@@ -39,7 +45,9 @@ public class NPController {
 	public String displayParkDetails(ModelMap map, @RequestParam String parkCode) {
 
 		Park park = parkDao.getParkByCode(parkCode);
+		List<Forecast> forecastList = weatherDao.getForecast(parkCode);
 		map.addAttribute("park", park);
+		map.addAttribute("forecasts", forecastList);
 
 		return "parkDetails";
 	}
@@ -62,7 +70,9 @@ public class NPController {
 	}
 
 	@RequestMapping(path = "/favoriteParks", method = RequestMethod.GET)
-	public String displayFavoritePars() {
+	public String displayFavoriteParks(ModelMap map) {
+		Map<Park, Integer> favoriteParks = surveyDao.getFavoriteParks();
+		map.addAttribute("favorites", favoriteParks);
 
 		return "favoriteParks";
 	}

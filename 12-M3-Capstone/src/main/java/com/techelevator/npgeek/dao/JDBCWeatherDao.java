@@ -53,7 +53,7 @@ public class JDBCWeatherDao implements WeatherDao {
 	
 	private String getWeatherImage(String weatherType) {
 		
-		String sql = "SELECT imgpath FROM weather_img WHERE name = ?";
+		String sql = "SELECT imgpath FROM weather_img WHERE forecast = ?";
 		
 		SqlRowSet results = jdbc.queryForRowSet(sql, weatherType.toLowerCase());
 		results.next();
