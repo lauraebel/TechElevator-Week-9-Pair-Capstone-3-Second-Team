@@ -7,6 +7,11 @@
 <title>National Park Geek</title>
 <c:url value="/css/npgeek.css" var="cssHref" />
 <link rel="stylesheet" href="${cssHref}">
+
+<script src="javascript.js">
+</script>
+
+
 </head>
 
 <body>
