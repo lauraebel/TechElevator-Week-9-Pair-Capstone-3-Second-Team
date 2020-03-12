@@ -38,13 +38,13 @@
 	</div>
 	
 	<form action="<c:url value="/details" />" method="POST">
-		<c:set var="choseFarenheit" value="true" />
+		<c:set var="tempUnit" value="true" />
 		
-		<input type="radio" value="${choseFarenheit}" name="changeUnit">
+		<input type="radio" value="${tempUnit}" name="tempUnit">
 			<c:url var="farenURL" value="/img/weather/farenheit.png" />
 			<img src="${farenURL}" alt="Farenheit img" />
 		
-		<input type="radio" value="${!choseFarenheit}" name="changeUnit" />
+		<input type="radio" value="${!tempUnit}" name="tempUnit" />
 			<c:url var="celURL" value="/img/weather/celsius.png" />
 			<img src="${celURL}" alt="Celsius img" />
 			

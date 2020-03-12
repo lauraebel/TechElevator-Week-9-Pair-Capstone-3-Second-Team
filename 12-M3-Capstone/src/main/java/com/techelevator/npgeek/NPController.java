@@ -23,7 +23,7 @@ import com.techelevator.npgeek.model.Park;
 import com.techelevator.npgeek.model.Survey;
 
 @Controller
-@SessionAttributes({"isFarenheit", "states", "parks", "park", "forecast"})
+@SessionAttributes({"isFarenheit", "states", "parks", "park", "forecasts"})
 public class NPController {
 
 	@Autowired
@@ -49,15 +49,7 @@ public class NPController {
 	public String displayParkDetails(ModelMap map, @RequestParam String parkCode) {
 
 		if (!map.containsKey("isFarenheit")) {
-			boolean isFarenheit = true;
-			map.addAttribute("isFarenheit", isFarenheit);
-		} else {
-			boolean isFarenheit = (boolean)map.get("isFarenheit");
-			isFarenheit = !isFarenheit;
-		}
-		
-		if (!map.containsKey("park")) {
-			
+			map.addAttribute("isFarenheit", true);
 		}
 		
 		Park park = parkDao.getParkByCode(parkCode);
@@ -70,22 +62,13 @@ public class NPController {
 	}
 	
 	@RequestMapping(path = "/details", method = RequestMethod.POST)
-	public String displayParkDetailsOtherTempUnit(ModelMap map, @RequestParam boolean choseFarenheit) {
+	public String displayParkDetailsOtherTempUnit(ModelMap map, @RequestParam boolean tempUnit) {
 
-		if (changeUnit.equalsIgnoreCase("true")) {
-			boolean isFarenheit = (boolean)map.get("isFarenheit");
-			isFarenheit = !
+		if (tempUnit != ((boolean)map.get("isFarenheit"))) {
+			boolean changedUnit = (boolean)map.get("isFarenheit");
+			changedUnit = !changedUnit;
+			map.addAttribute("isFarenheit", changedUnit);
 		}
-		
-		if (!map.containsKey("park")) {
-			
-		}
-		
-		Park park = parkDao.getParkByCode(parkCode);
-		List<Forecast> forecastList = weatherDao.getForecast(parkCode);
-		
-		map.addAttribute("park", park);
-		map.addAttribute("forecasts", forecastList);
 		
 		return "parkDetails";
 	}
