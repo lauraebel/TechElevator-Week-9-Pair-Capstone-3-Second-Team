@@ -9,22 +9,23 @@
 	<div class="grid-item title"></div>
 	<main class="grid-item main">
 	<div class="items">
-		<c:set var="detail" value="" />
+	<c:set var="detail" value=""/>
 		<c:forEach items="${parks}" var="park">
 			<div class="polaroid">
-				<c:url value="/" var="homepageDetails">
+				<c:url value="test" var="homepageDetails">
 					<c:param name="parkCode" value="${park.code}" />
 				</c:url>
 
 				<c:url var="parkImg"
 					value="/img/parks/${park.code.toLowerCase()}.jpg" />
-				<a class="" href="${homepageDetails}"> <img src="${parkImg}"
-					alt="Image of ${park.name}">
+				<a class="" href="${homepageDetails}"> <img
+					src="${parkImg}" alt="Image of ${park.name}">
 					<p>${park.name}</p>
+					<div class="overlay">THIS IS A BIG FAT TEST</div>
 				</a>
 			</div>
 			<c:if test="${param.parkCode == park.code}">
-				<c:set var="detail" value="${park}" />
+				<c:set var="detail" value="${park}"/>
 			</c:if>
 		</c:forEach>
 
@@ -38,19 +39,19 @@
 				<p>default message</p>
 			</c:when>
 			<c:otherwise>
-				<c:url value="details" var="parkDetailsUrl">
+			<c:url value="details" var="parkDetailsUrl">
 					<c:param name="parkCode" value="${detail.code}" />
-				</c:url>
+			</c:url>
 				<p>${detail.description}</p>
-				<a class="" href="${parkDetailsUrl}">
+				<a class="" href="${parkDetailsUrl}"> 
 					<p>View Additional Park Details</p>
 				</a>
 			</c:otherwise>
-
+		
 		</c:choose>
 		<h1>${parkDetail.name}</h1>
 
 	</div>
 
 </div>
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />
+
