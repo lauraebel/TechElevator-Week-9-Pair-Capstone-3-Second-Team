@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>National Park Geek</title>
 	<c:url value="/css/npgeek.css" var="cssHref" />
+	<%-- <c:url value="/css/test.css" var="cssHref" /> --%>
 	<link rel="stylesheet" href="${cssHref}">
 
 	<script src="javascript.js"></script>
@@ -17,8 +18,9 @@
 		<c:url value="/" var="homePageHref" />
 		<c:url var="logoImg" value="/img/logo.png" />
 
-		<a href="${homePageHref}"> <img src="${logoImg}"
-			alt="National Park Geek logo" />
+		<a href="${homePageHref}">
+		<img src="${logoImg}" alt="National Park Geek logo" />
+		<h1>NATIONAL PARK GEEK</h1>
 		</a>
 	</header>
 	<nav>

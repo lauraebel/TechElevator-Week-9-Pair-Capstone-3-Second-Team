@@ -1,0 +1,42 @@
+:root{
+    --background-green: #00301B;
+    --header-height: 5%;
+}
+
+html {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header a {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+a img {
+    max-width: 20%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+}
+
+a h1 {
+    color: white;
+    font-size: 5vw;
+
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
