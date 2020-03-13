@@ -23,7 +23,7 @@ import com.techelevator.npgeek.model.Park;
 import com.techelevator.npgeek.model.Survey;
 
 @Controller
-@SessionAttributes({"isFarenheit", "states", "parks", "park", "forecasts"})
+@SessionAttributes({"isFarenheit", "states", "parks", "park", "forecasts","parkDetail"})
 public class NPController {
 
 	@Autowired
@@ -102,5 +102,17 @@ public class NPController {
 
 		return "favoriteParks";
 	}
+	
+	@RequestMapping(path = "/test", method = RequestMethod.GET)
+	public String displayTest(ModelMap map) {
+		List<Park> parkList = parkDao.getParks();
+		String[] statesArray = {"Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor Outlying Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"};
+		map.addAttribute("parks", parkList);
+		map.addAttribute("states", statesArray);
+	
+
+		return "test";
+	}
+	
 
 }

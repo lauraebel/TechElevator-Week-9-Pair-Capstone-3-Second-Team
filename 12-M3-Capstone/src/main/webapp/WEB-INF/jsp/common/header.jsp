@@ -5,10 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>National Park Geek</title>
-	<c:url value="/css/npgeek.css" var="cssHref" />
+	<c:url value="/css/test.css" var="cssHref" />
 	<link rel="stylesheet" href="${cssHref}">
 
-	<script src="javascript.js"></script>
 
 </head>
 
