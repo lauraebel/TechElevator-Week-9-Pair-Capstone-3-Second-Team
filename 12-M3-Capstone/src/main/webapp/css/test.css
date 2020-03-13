@@ -1,7 +1,7 @@
 html {
 	text-align: center;
 	background: white;
-	font-family: Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 	margin: 0;
 }
 
@@ -22,12 +22,6 @@ html {
 	padding: 3.5em 1em;
 	font-size: 1em;
 	font-weight: 700;
-}
-
-.header {
-	background-color: darken(skyblue, 60%);
-	grid-area: header;
-	padding: 1em;
 }
 
 .main {
@@ -153,4 +147,79 @@ h1 {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	text-align: center;
+}
+
+header {
+	margin: 5px;
+	background-color:#00301B;
+}
+
+header h1 {
+	font-size: 5vw;
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+header img {
+    max-width: 20%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+}
+
+/* Survey Page */
+#survey-details {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #favoriteParkCode {	
+	height: 30px;
+	font-size: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #email {
+	font-size: 17px;
+	width: 300px;
+	height: 30px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #state {
+	height: 30px;
+	font-size: 17px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #buttons {
+	position: absolute;	
+}
+
+input[type="radio"] + label {
+	font-size: 18px;	
+	padding-left: 15px;
+	padding-right: 40px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+#survey-details > #survey > #submit {
+	border-radius: 10px;
+	border: solid 1px;
+	font-size: 20px;
+	width: 200px;
+	max-height: 100px;
+	position: relative;
+	top: 60px;
+    padding-top: 5px;
+}
+
+#survey-details > #survey > h3 {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+div.buttons > h3 {
+	padding-top: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;	
 }

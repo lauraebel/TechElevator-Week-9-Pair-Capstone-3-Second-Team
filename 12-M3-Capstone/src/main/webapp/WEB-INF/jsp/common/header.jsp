@@ -7,8 +7,6 @@
 	<title>National Park Geek</title>
 	<c:url value="/css/test.css" var="cssHref" />
 	<link rel="stylesheet" href="${cssHref}">
-
-
 </head>
 
 <body>

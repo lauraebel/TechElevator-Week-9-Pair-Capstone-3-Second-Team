@@ -1,8 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:url value="/css/test.css" var="cssHref" />
-<link rel="stylesheet" href="${cssHref}">
-
+<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <div class="grid-container">
 	<header class="grid-item header"> </header>
