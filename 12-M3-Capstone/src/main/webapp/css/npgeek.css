@@ -11,7 +11,7 @@ body {
 
 header {
 	margin: 5px;
-	background-color: green;
+	background-color:#00301B;
 	grid: header;
 }
 
@@ -33,12 +33,12 @@ nav {
 	grid: nav;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	background-color: green;
+	background-color:  #00301B;
 }
 
 nav h2 {
 	color: #FFFFFF;
-	padding-left: 60px;
+	padding-left: 0px;
 }
 
 nav p {
