@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
@@ -28,8 +29,14 @@
 	<c:set var="suffix" value="" />
 	
 	<div class="forecast">
+		<c:set var="i" value="0" />
 		<c:forEach items="${forecasts}" var="forecast">
 			<div class="dayForecast">
+				
+				<fmt:parseDate type="date" pattern="yyyy-MM-dd" value="${forecast.getForecastDate(i)}" var="date"/>
+				<fmt:formatDate value="${date}"/>
+				<c:set var="i" value="${i + 1}" />
+				
 				<c:url var="forecastImg" value="/img/weather/${forecast.imgPath}" />
 				<img src="${forecastImg}"
 					alt="Image of ${forecast.weatherType} Weather">

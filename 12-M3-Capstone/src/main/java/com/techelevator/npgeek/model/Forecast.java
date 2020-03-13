@@ -1,5 +1,7 @@
 package com.techelevator.npgeek.model;
 
+import java.time.LocalDate;
+
 public class Forecast {
 
 	private String weatherType;
@@ -63,6 +65,10 @@ public class Forecast {
 		
 		double celLow = (fLow - 32) * ((double)5/9);
 		this.cLow = (int) celLow;
+	}
+
+	public LocalDate getForecastDate(Long days) {
+		return LocalDate.now().plusDays(days);
 	}
 
 }
